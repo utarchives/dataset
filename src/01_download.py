@@ -42,8 +42,6 @@ while loop_flg:
     page += 1
 
     data = requests.get(url).json()
-
-    page += 1
     
     if len(data) > 0 and "errors" not in data:
         for i in range(len(data)):
