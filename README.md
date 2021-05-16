@@ -11,3 +11,19 @@ output_dir: /(...)/docs
 key_identity: (Optional)
 key_credential: (Optional)
 ```
+
+## 実行
+
+### ダウンロード
+
+```
+cd src
+sh 100_download.sh
+```
+
+### Excel作成
+
+```
+cd src
+sh 102_createExcel.sh
+```
