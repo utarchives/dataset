@@ -76,28 +76,28 @@ for i in range(len(files)):
             elif ":" in key:
                 values = []
                 for e in value:
-                    values.append(e["@id"] if "@id" in e else e["@value"])
+                    try:
+                        values.append(e["@id"] if "@id" in e else e["@value"])
 
-                    targets = ["property_label", "is_public", "type"]
+                        targets = ["property_label", "is_public", "type"]
 
-                    if key not in propertiesMap:
-                        tmp = {}
+                        if key not in propertiesMap:
+                            tmp = {}
+                            for t in targets:
+                                tmp[t] = {}
+                            propertiesMap[key] = tmp
+
+                        propertiesObj = propertiesMap[key]
+
                         for t in targets:
-                            tmp[t] = {}
-                        propertiesMap[key] = tmp
+                            if t in e:
+                                property_label = e[t]
+                                if property_label not in propertiesObj[t]:
+                                    propertiesObj[t][property_label] = 0
+                                propertiesObj[t][property_label] += 1
 
-                    propertiesObj = propertiesMap[key]
-                    
-                    
-
-                    for t in targets:
-
-                        property_label = e[t]
-
-                        if property_label not in propertiesObj[t]:
-                            propertiesObj[t][property_label] = 0
-                        propertiesObj[t][property_label] += 1
-
+                    except Exception as err:
+                        print("Err", key, e, err)
 
                 obj[key] = values
             elif "@type" in key:
