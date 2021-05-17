@@ -11,6 +11,10 @@ key_identity: (Optional：空のままでもよい)
 key_credential: (Optional：空のままでもよい)
 ```
 
+`key_identity`と`key_credential`については、以下を参考に取得してください。
+
+https://omeka.org/s/docs/user-manual/admin/users/#api-key
+
 ## 実行
 
 Python3の実行環境をご用意ください。
