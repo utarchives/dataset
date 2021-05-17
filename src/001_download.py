@@ -31,7 +31,7 @@ loop_flg = True
 page = int(args.start)
 
 query = ""
-if "key_identity" in settings:
+if "key_identity" in settings and settings["key_identity"] != None:
     query += "&key_identity=" + settings["key_identity"] + "&key_credential=" + settings["key_credential"]
 
 while loop_flg:
