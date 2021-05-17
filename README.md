@@ -6,13 +6,14 @@
 
 ```YAML
 api_url: https://dev.omeka.org/omeka-s-sandbox/api
-github_pages_url: https://github.com/nakamura196/omekas_export
-output_dir: /(...)/docs
-key_identity: (Optional)
-key_credential: (Optional)
+output_dir: (出力フォルダへのフルパス。例：/Users/xxx/git/dataset/docs)
+key_identity: (Optional：空のままでもよい)
+key_credential: (Optional：空のままでもよい)
 ```
 
 ## 実行
+
+Python3の実行環境をご用意ください。
 
 ### ダウンロード
 
